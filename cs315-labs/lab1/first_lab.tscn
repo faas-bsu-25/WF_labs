@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bipag5hoxcpft"]
+
+[ext_resource type="Texture2D" uid="uid://dvshekfpdftbo" path="res://assets/fish_brown.png" id="1_fwcx2"]
+
+[node name="Nody2d" type="Node2D"]
+
+[node name="FishBrown" type="Sprite2D" parent="."]
+position = Vector2(340, 163)
+texture = ExtResource("1_fwcx2")
