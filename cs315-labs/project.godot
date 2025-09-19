@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="CS315 labs"
-run/main_scene="uid://qirlmlqwm12r"
+run/main_scene="uid://b8shijgacmptl"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://lab2/icon.svg"
+config/icon="res://lab2-pong/icon.svg"
 
 [input]
 

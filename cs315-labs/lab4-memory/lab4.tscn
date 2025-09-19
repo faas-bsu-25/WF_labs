@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8shijgacmptl"]
+
+[ext_resource type="PackedScene" uid="uid://eifh6v5m4a18" path="res://lab4-memory/card.tscn" id="1_8jspd"]
+[ext_resource type="Script" uid="uid://cxf3s5orl30dt" path="res://lab4-memory/lab_4.gd" id="1_gyj6a"]
+[ext_resource type="Texture2D" uid="uid://c1ku0vjsjqgkg" path="res://lab4-memory/sprites/card_clubs_06.png" id="2_6n7e8"]
+[ext_resource type="Texture2D" uid="uid://bmi27rr2ptuvx" path="res://lab4-memory/sprites/card_clubs_K.png" id="3_gyj6a"]
+[ext_resource type="Texture2D" uid="uid://rcy7hg4s3gcp" path="res://lab4-memory/sprites/card_joker_black.png" id="4_4nxpy"]
+
+[node name="Lab4" type="Node2D"]
+script = ExtResource("1_gyj6a")
+
+[node name="Gamemain" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 115.0
+offset_bottom = 123.0
+
+[node name="GridContainer" type="GridContainer" parent="Gamemain"]
+layout_mode = 0
+offset_right = 229.0
+offset_bottom = 206.0
+columns = 3
+
+[node name="card" parent="Gamemain/GridContainer" instance=ExtResource("1_8jspd")]
+layout_mode = 2
+
+[node name="card2" parent="Gamemain/GridContainer" instance=ExtResource("1_8jspd")]
+layout_mode = 2
+card_front = ExtResource("2_6n7e8")
+card_value = "6spades"
+
+[node name="card3" parent="Gamemain/GridContainer" instance=ExtResource("1_8jspd")]
+layout_mode = 2
+
+[node name="card4" parent="Gamemain/GridContainer" instance=ExtResource("1_8jspd")]
+layout_mode = 2
+card_front = ExtResource("3_gyj6a")
+card_value = "kingclubs"
+
+[node name="card5" parent="Gamemain/GridContainer" instance=ExtResource("1_8jspd")]
+layout_mode = 2
+card_front = ExtResource("4_4nxpy")
+card_value = "blackjoker"
+
+[node name="card6" parent="Gamemain/GridContainer" instance=ExtResource("1_8jspd")]
+layout_mode = 2
+
+[node name="card7" parent="Gamemain/GridContainer" instance=ExtResource("1_8jspd")]
+layout_mode = 2
+card_front = ExtResource("2_6n7e8")
+card_value = "6spades"
+
+[node name="card8" parent="Gamemain/GridContainer" instance=ExtResource("1_8jspd")]
+layout_mode = 2
+card_front = ExtResource("4_4nxpy")
+card_value = "blackjoker"
+
+[node name="card9" parent="Gamemain/GridContainer" instance=ExtResource("1_8jspd")]
+layout_mode = 2
+card_front = ExtResource("3_gyj6a")
+card_value = "kingclubs"
+
+[node name="FlipTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="card_selected" from="Gamemain/GridContainer/card" to="." method="card_clicked"]
+[connection signal="card_selected" from="Gamemain/GridContainer/card2" to="." method="card_clicked"]
+[connection signal="card_selected" from="Gamemain/GridContainer/card3" to="." method="card_clicked"]
+[connection signal="card_selected" from="Gamemain/GridContainer/card4" to="." method="card_clicked"]
+[connection signal="card_selected" from="Gamemain/GridContainer/card5" to="." method="card_clicked"]
+[connection signal="card_selected" from="Gamemain/GridContainer/card6" to="." method="card_clicked"]
+[connection signal="card_selected" from="Gamemain/GridContainer/card7" to="." method="card_clicked"]
+[connection signal="card_selected" from="Gamemain/GridContainer/card8" to="." method="card_clicked"]
+[connection signal="card_selected" from="Gamemain/GridContainer/card9" to="." method="card_clicked"]
+[connection signal="timeout" from="FlipTimer" to="." method="_on_flip_timer_timeout"]
