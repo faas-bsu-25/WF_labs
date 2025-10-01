@@ -1,6 +1,6 @@
 extends Timer
 
-var enemy_scene = preload("res://lab3/elements/enemy.tscn")
+var enemy_scene = preload("res://lab3-shoot/elements/enemy.tscn")
 
 func _on_timeout() -> void:
 	var new_enemy = enemy_scene.instantiate()

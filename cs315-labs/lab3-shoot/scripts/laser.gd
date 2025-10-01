@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @export var shoot_speed = 150
-var explosion_particles = preload("res://lab3/elements/explosion.tscn")
+var explosion_particles = preload("res://lab3-shoot/elements/explosion.tscn")
 
 func _ready() -> void:
 	self.apply_impulse(Vector2(0,-shoot_speed))
