@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://debbufuu1alqi"]
+
+[ext_resource type="Script" uid="uid://d07hsre3ogf6l" path="res://lab5-Infinite_Runner/ground_move.gd" id="1_aq0xk"]
+[ext_resource type="Texture2D" uid="uid://bdgmryhwi01eq" path="res://lab5-Infinite_Runner/sprites/platforms.png" id="2_kiug6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfysd"]
+size = Vector2(183.5, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m5b2"]
+atlas = ExtResource("2_kiug6")
+region = Rect2(15.7175, 0, 32.3179, 8.67257)
+
+[node name="ground" type="StaticBody2D"]
+script = ExtResource("1_aq0xk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 87)
+shape = SubResource("RectangleShape2D_bfysd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.00003, 84.5)
+scale = Vector2(5.39063, 5.375)
+texture = SubResource("AtlasTexture_1m5b2")
