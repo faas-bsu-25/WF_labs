@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dy5u5hrc8uqe8"
+path="res://.godot/imported/Andrew Prahlow - Outer Wilds.ogg-e4f2ac768add98a2c14621b10798f786.oggvorbisstr"
+
+[deps]
+
+source_file="res://project1/music/Andrew Prahlow - Outer Wilds.ogg"
+dest_files=["res://.godot/imported/Andrew Prahlow - Outer Wilds.ogg-e4f2ac768add98a2c14621b10798f786.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
