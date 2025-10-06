@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export  var move_speed : float = 200
+var score : int = 0 
 
 func _physics_process(delta: float) -> void:
 	Input.get_vector("left","right","up","down")
@@ -21,5 +22,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x,0,move_speed)
 	
-	
 	move_and_slide()
+	
+	#about coin score
+func add_score(points: int) -> void:
+	score += points
+	get_tree().call_group("UI", "update_score", score)
+	
+	
+	

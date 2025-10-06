@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cb07wfgr0j2fr"
+path="res://.godot/imported/Amos Roddy - The Blue Archer.ogg-667f51420f2fee7c5b827efd3b33a7e1.oggvorbisstr"
+
+[deps]
+
+source_file="res://project1/music/Amos Roddy - The Blue Archer.ogg"
+dest_files=["res://.godot/imported/Amos Roddy - The Blue Archer.ogg-667f51420f2fee7c5b827efd3b33a7e1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

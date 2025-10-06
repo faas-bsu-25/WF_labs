@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bkxxsonb0ux6m"
+path="res://.godot/imported/Amos Roddy - Mischievous Alchemy.ogg-5eb93830a039f13065e7814449a4e83d.oggvorbisstr"
+
+[deps]
+
+source_file="res://project1/music/Amos Roddy - Mischievous Alchemy.ogg"
+dest_files=["res://.godot/imported/Amos Roddy - Mischievous Alchemy.ogg-5eb93830a039f13065e7814449a4e83d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
