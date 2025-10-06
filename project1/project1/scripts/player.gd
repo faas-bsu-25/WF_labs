@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 @export  var move_speed : float = 200
-var score : int = 0 
+@export var Win_score: int = 100
+@onready var GGsound: AudioStreamPlayer2D = $gameover
+var score : int = 0
 
 func _physics_process(delta: float) -> void:
 	Input.get_vector("left","right","up","down")
@@ -28,6 +30,8 @@ func _physics_process(delta: float) -> void:
 func add_score(points: int) -> void:
 	score += points
 	get_tree().call_group("UI", "update_score", score)
-	
-	
-	
+	if score >= Win_score:
+		_game_over()
+	#game over
+func _game_over():
+	get_tree().change_scene_to_file("res://project1/UI/gameoverscreen.tscn") 

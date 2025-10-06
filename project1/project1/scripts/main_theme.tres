@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cmd32egk8kq1"]
+
+[ext_resource type="Texture2D" uid="uid://c3u8ihut536wr" path="res://project1/UI/Default/Border/panel-border-000.png" id="1_rxp4m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nr0uc"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nr0uc"]
+texture = ExtResource("1_rxp4m")
+region_rect = Rect2(2, 3, 43, 42)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfyey"]
+
+[resource]
+Button/constants/outline_size = 10
+Button/styles/disabled = SubResource("StyleBoxEmpty_nr0uc")
+Button/styles/focus = SubResource("StyleBoxTexture_nr0uc")
+Button/styles/hover = SubResource("StyleBoxEmpty_nr0uc")
+Button/styles/normal = SubResource("StyleBoxEmpty_nr0uc")
+Button/styles/pressed = SubResource("StyleBoxEmpty_tfyey")

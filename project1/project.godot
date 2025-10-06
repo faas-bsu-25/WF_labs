@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="project1"
-run/main_scene="uid://kefbgt4dvxvo"
+run/main_scene="uid://231h5k1myjjb"
 config/features=PackedStringArray("4.4", "Forward Plus")
+
+[display]
+
+window/stretch/aspect="expand"
 
 [global_group]
 

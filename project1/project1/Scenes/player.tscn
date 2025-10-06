@@ -200,30 +200,32 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a2yvv"]
-radius = 12.0
-height = 56.0
+radius = 9.0
+height = 34.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(109, 61)
 script = ExtResource("1_kaj8m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(20, -7)
-scale = Vector2(1.2828, 1.30428)
+position = Vector2(18.4016, -3.5)
+scale = Vector2(0.866633, 0.864583)
 sprite_frames = SubResource("SpriteFrames_1wu02")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(20, 12)
+position = Vector2(18, 10)
 shape = SubResource("CapsuleShape2D_a2yvv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.38, 1.38)
+position = Vector2(19, 10)
+zoom = Vector2(1.8, 1.8)
 limit_smoothed = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.01
-drag_top_margin = 0.1
-drag_right_margin = 0.1
+drag_left_margin = 0.03
+drag_top_margin = 0.08
+drag_right_margin = 0.03
+drag_bottom_margin = 0.08
 editor_draw_drag_margin = true

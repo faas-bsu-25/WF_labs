@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cqxspno2qgpg1"
+path="res://.godot/imported/David Stephen Goldsmith _ Andrew Michael Britton _ Wayne Anthony Murray _ Jeffrey Thomas Kightly - In The Summer.ogg-7a07c2765beb49c669d20d7d02ce1c2c.oggvorbisstr"
+
+[deps]
+
+source_file="res://project1/music/David Stephen Goldsmith _ Andrew Michael Britton _ Wayne Anthony Murray _ Jeffrey Thomas Kightly - In The Summer.ogg"
+dest_files=["res://.godot/imported/David Stephen Goldsmith _ Andrew Michael Britton _ Wayne Anthony Murray _ Jeffrey Thomas Kightly - In The Summer.ogg-7a07c2765beb49c669d20d7d02ce1c2c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
