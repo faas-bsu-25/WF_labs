@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="CS315 labs"
-run/main_scene="uid://b4cmlac4eylj4"
+run/main_scene="uid://c3f6ixtldc5r6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://lab2-pong/icon.svg"
+
+[autoload]
+
+Gamecontrolller="*res://lab6-Platformer/script/gamecontrolller.gd"
 
 [input]
 
