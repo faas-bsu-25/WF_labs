@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dth723q2xaax7"]
+
+[ext_resource type="Script" uid="uid://8hyebs0cjjob" path="res://lab8-RollingGame3D/groundmove.gd" id="1_4w8k4"]
+[ext_resource type="Material" uid="uid://bv3qdv5l57l4w" path="res://lab8-RollingGame3D/moveground_material_3d.tres" id="2_s67j8"]
+[ext_resource type="PackedScene" uid="uid://wtjuyd26yv8c" path="res://lab8-RollingGame3D/banana.tscn" id="3_lnylq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1xpjy"]
+size = Vector3(5.97922, 0.296387, 2.77527)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rors1"]
+
+[node name="Groundholder" type="Node3D"]
+script = ExtResource("1_4w8k4")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48961, -0.351807, 0.887634)
+shape = SubResource("BoxShape3D_1xpjy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(6.29187, 0, 0, 0, 0.466065, 0, 0, 0, 3.04246, 2.39907, -0.491264, 0.591469)
+material_override = ExtResource("2_s67j8")
+mesh = SubResource("BoxMesh_rors1")
+
+[node name="Banana2" parent="." instance=ExtResource("3_lnylq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1083, 0.465774, 3.84168)

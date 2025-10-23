@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2wwm3rsah2ov"]
+
+[ext_resource type="PackedScene" uid="uid://dth723q2xaax7" path="res://lab8-RollingGame3D/groundholder.tscn" id="1_rors1"]
+[ext_resource type="Script" uid="uid://dysx71le4jfhv" path="res://lab8-RollingGame3D/camera_3d.gd" id="3_rors1"]
+[ext_resource type="PackedScene" uid="uid://wtjuyd26yv8c" path="res://lab8-RollingGame3D/banana.tscn" id="4_7fpf3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rors1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7fpf3"]
+
+[node name="Monkyball" type="Node3D"]
+
+[node name="Groundholder" parent="." instance=ExtResource("1_rors1")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.580539, 0.810058, -0.0823385, -0.525326, 0.449894, 0.722238, 0.622099, -0.376033, 0.686726, 0.25975, 2.9127, -3.00368)
+
+[node name="Mplayer" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.67876, 0.648154, 0.95468)
+collision_layer = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mplayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0285979, 1.75853, 0.00311476)
+shape = SubResource("SphereShape3D_rors1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mplayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76155, 0)
+mesh = SubResource("SphereMesh_7fpf3")
+
+[node name="Camera3D" type="Camera3D" parent="Mplayer" node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(-0.014746, 0.0533671, -0.998466, 0.0311351, 0.998115, 0.0528885, 0.999407, -0.0303074, -0.0163798, -3.52797, 1.05994, -0.578987)
+fov = 101.059
+script = ExtResource("3_rors1")
+follow_target = NodePath("..")
+offset = Vector3(-2, 1.5, 0)
+
+[node name="Banana" parent="." instance=ExtResource("4_7fpf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.647852, 0.287565, 4.2948)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Groundholder2" parent="." instance=ExtResource("1_rors1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.22587, 0, -0.0368466)
+
+[node name="Groundholder3" parent="." instance=ExtResource("1_rors1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.27699, 0, 2.92479)
