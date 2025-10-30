@@ -1,13 +1,7 @@
 extends Control
 
-@onready var new_game : Button = $V/Newgame
-
-
-#func _ready() -> void:
-	#new_game.grab_focus()
-	
 func _on_newgame_pressed() -> void:
-	get_tree().change_scene_to_file("res://assets/leve_2_world.tscn")
+	get_tree().change_scene_to_file("res://assets/world/leve_2_world.tscn")
 	
-func _on_exit_game_pressed() -> void:
+func _on_exitgame_pressed() -> void:
 	get_tree().quit()

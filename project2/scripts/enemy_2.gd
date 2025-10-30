@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal enemy_died
 @onready var animator: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detect_area: Area2D = $DetectArea       
 @onready var hitbox: Area2D = $Hitbox               
@@ -62,4 +63,5 @@ func take_damage(amount: int) -> void:
 func die() -> void:
 	is_dead = true
 	animator.play("death")
+	emit_signal("enemy_died") 
 	queue_free()
