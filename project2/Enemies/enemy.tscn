@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://br5rr4n2aa2xg"]
 
-[ext_resource type="Script" uid="uid://bmfocb2aio5oe" path="res://Enemies/enemy.gd" id="1_uo8du"]
+[ext_resource type="Script" uid="uid://bmfocb2aio5oe" path="res://scripts/enemy.gd" id="1_uo8du"]
 [ext_resource type="Texture2D" uid="uid://8dcf7y4t7x0j" path="res://sprites/fireman/fire-sprites/fire1.png" id="2_yv4rg"]
 [ext_resource type="Texture2D" uid="uid://dwja0636omwuq" path="res://sprites/fireman/fire-sprites/fire2.png" id="3_wy1h0"]
 [ext_resource type="Texture2D" uid="uid://iacln4c4xkp7" path="res://sprites/fireman/fire-sprites/fire3.png" id="4_dspr8"]
@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://lihf7xlxrmrj" path="res://sprites/fireman/idle-sprites/wizard-idle-5.png" id="25_ogj38"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ykshk"]
-radius = 20.0
+radius = 16.0
 height = 40.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d5pu8"]
@@ -135,7 +135,7 @@ animations = [{
 size = Vector2(29.25, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1o25g"]
-size = Vector2(67, 38)
+size = Vector2(148.5, 34)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_uo8du")
@@ -144,7 +144,7 @@ script = ExtResource("1_uo8du")
 position = Vector2(105, 29)
 shape = SubResource("CapsuleShape2D_ykshk")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
 position = Vector2(102, 21)
 scale = Vector2(0.844136, 0.757576)
 sprite_frames = SubResource("SpriteFrames_d5pu8")
@@ -163,5 +163,5 @@ shape = SubResource("RectangleShape2D_86edy")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
-position = Vector2(105.5, 29)
+position = Vector2(106, 30)
 shape = SubResource("RectangleShape2D_1o25g")

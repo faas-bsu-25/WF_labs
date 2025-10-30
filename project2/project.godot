@@ -10,9 +10,13 @@ config_version=5
 
 [application]
 
-config/name="2DLighting"
-run/main_scene="res://assets/mainworld.tscn"
+config/name="project2"
+run/main_scene="uid://qqagg8cm7rb3"
 config/features=PackedStringArray("4.4", "Forward Plus")
+
+[autoload]
+
+Gamecontroller="*res://scripts/Gamecontroller.gd"
 
 [global_group]
 

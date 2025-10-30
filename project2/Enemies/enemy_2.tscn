@@ -1,0 +1,135 @@
+[gd_scene load_steps=25 format=3 uid="uid://06b7c1h3mvwk"]
+
+[ext_resource type="Script" uid="uid://duqwl76k46hrb" path="res://scripts/enemy_2.gd" id="1_vx777"]
+[ext_resource type="Texture2D" uid="uid://dfk4ghxbncy82" path="res://sprites/angel/sprites/idle/angel1.png" id="2_6iesk"]
+[ext_resource type="Texture2D" uid="uid://8xkrisugyyye" path="res://sprites/angel/sprites/angel-attack/angel-attack-1.png" id="2_vx777"]
+[ext_resource type="Texture2D" uid="uid://c0ip480snicjv" path="res://sprites/angel/sprites/idle/angel2.png" id="3_5bfch"]
+[ext_resource type="Texture2D" uid="uid://bcvliv151xpss" path="res://sprites/angel/sprites/angel-attack/angel-attack-2.png" id="3_afkhg"]
+[ext_resource type="Texture2D" uid="uid://cdfhgdbxs7ndj" path="res://sprites/angel/sprites/idle/angel3.png" id="4_2k3o8"]
+[ext_resource type="Texture2D" uid="uid://bipmpjretd0ld" path="res://sprites/angel/sprites/angel-attack/angel-attack-3.png" id="4_vgd5i"]
+[ext_resource type="Texture2D" uid="uid://db1nd4p0a3p5j" path="res://sprites/fireman/enemy-death-sprites/enemy-death2.png" id="5_2lnpx"]
+[ext_resource type="Texture2D" uid="uid://ckw3euysa0l44" path="res://sprites/angel/sprites/idle/angel4.png" id="5_yijfi"]
+[ext_resource type="Texture2D" uid="uid://bctcj2sivi5kn" path="res://sprites/angel/sprites/idle/angel5.png" id="6_klxvm"]
+[ext_resource type="Texture2D" uid="uid://7nftpgfg0sse" path="res://sprites/fireman/enemy-death-sprites/enemy-death3.png" id="6_ns0yh"]
+[ext_resource type="Texture2D" uid="uid://doyxbmc8uarir" path="res://sprites/fireman/enemy-death-sprites/enemy-death4.png" id="7_txo8q"]
+[ext_resource type="Texture2D" uid="uid://6uwrmtki3r53" path="res://sprites/angel/sprites/idle/angel6.png" id="7_vyn0g"]
+[ext_resource type="Texture2D" uid="uid://6qo4fmjh5l5a" path="res://sprites/fireman/enemy-death-sprites/enemy-death5.png" id="8_ptb0h"]
+[ext_resource type="Texture2D" uid="uid://cxdto8gdu7vwm" path="res://sprites/angel/sprites/idle/angel7.png" id="8_w2fwl"]
+[ext_resource type="Texture2D" uid="uid://dhoy3vdb01hjb" path="res://sprites/fireman/enemy-death-sprites/enemy-death6.png" id="9_31dd0"]
+[ext_resource type="Texture2D" uid="uid://baj0f6rbvhv3m" path="res://sprites/angel/sprites/idle/angel8.png" id="9_ff0tu"]
+[ext_resource type="Texture2D" uid="uid://dprgxjj8x4vpm" path="res://sprites/fireman/enemy-death-sprites/enemy-death7.png" id="10_4lywv"]
+[ext_resource type="Texture2D" uid="uid://cneny4uum2vgn" path="res://sprites/fireman/enemy-death-sprites/enemy-death8.png" id="11_i8ppu"]
+[ext_resource type="Texture2D" uid="uid://0fvx8ap07yd7" path="res://sprites/fireman/enemy-death-sprites/enemy-death9.png" id="12_a65ag"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1wql1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vx777")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_afkhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vgd5i")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2lnpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ns0yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_txo8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ptb0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_31dd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4lywv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_i8ppu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a65ag")
+}],
+"loop": true,
+"name": &"death",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6iesk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5bfch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2k3o8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yijfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_klxvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vyn0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w2fwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ff0tu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ykshk"]
+radius = 16.0
+height = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86edy"]
+size = Vector2(29.25, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o25g"]
+size = Vector2(148.5, 34)
+
+[node name="Enemy2" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_vx777")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemies"]]
+position = Vector2(106, 22)
+scale = Vector2(0.689981, 0.688034)
+sprite_frames = SubResource("SpriteFrames_1wql1")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(105, 29)
+shape = SubResource("CapsuleShape2D_ykshk")
+
+[node name="Hitbox" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(106, 30)
+shape = SubResource("RectangleShape2D_86edy")
+
+[node name="DetectArea" type="Area2D" parent="."]
+position = Vector2(-1, -1)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
+position = Vector2(107, 31)
+shape = SubResource("RectangleShape2D_1o25g")
