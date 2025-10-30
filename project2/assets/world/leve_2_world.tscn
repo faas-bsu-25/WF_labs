@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://qqagg8cm7rb3"]
+[gd_scene load_steps=15 format=4 uid="uid://qqagg8cm7rb3"]
 
 [ext_resource type="TileSet" uid="uid://g3uxdxt7lgdu" path="res://assets/tileset resource.tres" id="1_j73ts"]
 [ext_resource type="PackedScene" uid="uid://v8k7ejnco5k1" path="res://assets/player.tscn" id="2_rm04x"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://br5rr4n2aa2xg" path="res://Enemies/enemy.tscn" id="6_h33da"]
 [ext_resource type="Texture2D" uid="uid://dpp6gkke68v7x" path="res://sprites/oldplayer/platform.png" id="7_rm04x"]
 [ext_resource type="Texture2D" uid="uid://c01ru0cprf7bp" path="res://assets/light.tres" id="8_8jiud"]
+[ext_resource type="PackedScene" uid="uid://dogvbpa5uq5y6" path="res://assets/ladder.tscn" id="9_weq77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jiud"]
 size = Vector2(64, 16)
@@ -138,5 +139,23 @@ energy = 1.5
 texture = ExtResource("8_8jiud")
 texture_scale = 1.5
 height = 9.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = -149.0
+offset_top = -202.0
+offset_right = -15.0
+offset_bottom = -150.0
+text = "You shold find the Key to open the door"
+
+[node name="Area2D" parent="." instance=ExtResource("9_weq77")]
+position = Vector2(118, -147)
+scale = Vector2(0.613048, 0.69618)
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 114.0
+offset_top = -164.0
+offset_right = 226.0
+offset_bottom = -141.0
+text = "Here is Ladder"
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
