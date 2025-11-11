@@ -140,16 +140,16 @@ texture = ExtResource("8_8jiud")
 texture_scale = 1.5
 height = 9.0
 
+[node name="Area2D" parent="." instance=ExtResource("9_weq77")]
+position = Vector2(118, -147)
+scale = Vector2(0.613048, 0.69618)
+
 [node name="Label" type="Label" parent="."]
 offset_left = -149.0
 offset_top = -202.0
 offset_right = -15.0
 offset_bottom = -150.0
 text = "You shold find the Key to open the door"
-
-[node name="Area2D" parent="." instance=ExtResource("9_weq77")]
-position = Vector2(118, -147)
-scale = Vector2(0.613048, 0.69618)
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 114.0
