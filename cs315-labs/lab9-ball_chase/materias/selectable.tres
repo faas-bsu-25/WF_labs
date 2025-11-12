@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bh6c82g31t00"]
+
+[ext_resource type="Material" uid="uid://b0bgemrb2cy0b" path="res://lab9-ball_chase/materias/outline.tres" id="1_prkxx"]
+
+[resource]
+next_pass = ExtResource("1_prkxx")

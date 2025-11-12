@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b0bgemrb2cy0b"]
+
+[ext_resource type="Shader" uid="uid://c2uvsitynd1nl" path="res://lab9-ball_chase/materias/new_shader.gdshader" id="1_234bo"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_234bo")
+shader_parameter/outline_color = Color(0.578193, 0.589675, 0.29778, 1)
+shader_parameter/outline_width = 3.0

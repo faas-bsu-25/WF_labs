@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bb080nfo1lvip"
+path="res://.godot/imported/animal-horse.obj-0471f8826a34eb2cfe8c6a3b3dad2751.mesh"
+
+[deps]
+
+files=["res://.godot/imported/animal-horse.obj-0471f8826a34eb2cfe8c6a3b3dad2751.mesh"]
+
+source_file="res://lab9-ball_chase/Models/OBJ format/animal-horse.obj"
+dest_files=["res://.godot/imported/animal-horse.obj-0471f8826a34eb2cfe8c6a3b3dad2751.mesh", "res://.godot/imported/animal-horse.obj-0471f8826a34eb2cfe8c6a3b3dad2751.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

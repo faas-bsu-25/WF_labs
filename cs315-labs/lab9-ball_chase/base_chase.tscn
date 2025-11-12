@@ -1,0 +1,103 @@
+[gd_scene load_steps=17 format=3 uid="uid://cowa3h5l7b6yk"]
+
+[ext_resource type="Script" uid="uid://dgqmn8xyy2ekk" path="res://lab9-ball_chase/scripts/character_body_3d.gd" id="1_hx5gq"]
+[ext_resource type="PackedScene" uid="uid://wug46yq1ss07" path="res://lab9-ball_chase/Models/GLB format/number-0.glb" id="2_yxeqv"]
+[ext_resource type="PackedScene" uid="uid://dnqv7q4fp5sbl" path="res://lab9-ball_chase/Models/GLB format/number-4.glb" id="3_tqyxu"]
+[ext_resource type="Material" uid="uid://7l22rtxhcm2m" path="res://lab9-ball_chase/materias/ball_ground_materia.tres" id="4_yxeqv"]
+[ext_resource type="Material" uid="uid://bh6c82g31t00" path="res://lab9-ball_chase/materias/selectable.tres" id="5_tqyxu"]
+[ext_resource type="Script" uid="uid://bxxsjhlsn8yv7" path="res://lab9-ball_chase/dog.gd" id="6_ib6na"]
+[ext_resource type="PackedScene" uid="uid://v43n2scedmqu" path="res://lab9-ball_chase/Models/FBX format/animal-dog.fbx" id="7_v4n4m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s14oa"]
+sky_top_color = Color(0.291147, 0.449523, 0.692516, 1)
+sky_horizon_color = Color(0.61475, 0.66822, 0.712873, 1)
+ground_bottom_color = Color(0.136897, 0.1924, 0.128021, 1)
+ground_horizon_color = Color(0.61475, 0.66822, 0.712873, 1)
+
+[sub_resource type="Sky" id="Sky_ib6na"]
+sky_material = SubResource("ProceduralSkyMaterial_s14oa")
+
+[sub_resource type="Environment" id="Environment_v4n4m"]
+background_mode = 2
+sky = SubResource("Sky_ib6na")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a11jt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hx5gq"]
+size = Vector3(17.0748, 0.882324, 16.9042)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hx5gq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tqyxu"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_s14oa"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a11jt"]
+
+[node name="BaseChase" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v4n4m")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00736, 0)
+script = ExtResource("1_hx5gq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_a11jt")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0246353, -0.292696)
+
+[node name="pickupjoint" type="Generic6DOFJoint3D" parent="Player/Camera3D"]
+node_a = NodePath("../..")
+
+[node name="CamRotator" type="Node3D" parent="Player"]
+
+[node name="number-02" parent="." instance=ExtResource("2_yxeqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75635, 0.9269, -4.78322)
+
+[node name="number-42" parent="." instance=ExtResource("3_tqyxu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49449, 0.0863308, -6.00378)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6594, -0.220587, -0.885582)
+shape = SubResource("BoxShape3D_hx5gq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(19.8422, 0, 0, 0, 0.421399, 0, 0, 0, 19.8094, -1.47598, -0.152868, -2.2025)
+material_override = ExtResource("4_yxeqv")
+mesh = SubResource("BoxMesh_hx5gq")
+
+[node name="Ball" type="RigidBody3D" parent="." groups=["pickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0432, 5.18735)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
+shape = SubResource("SphereShape3D_tqyxu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010211, -7.78115)
+material_override = ExtResource("5_tqyxu")
+mesh = SubResource("SphereMesh_s14oa")
+
+[node name="Dog" type="CharacterBody3D" parent="."]
+script = ExtResource("6_ib6na")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80316, 0.817905, -2.84794)
+shape = SubResource("SphereShape3D_a11jt")
+
+[node name="animal-dog" parent="Dog/CollisionShape3D" instance=ExtResource("7_v4n4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299218, -0.391385, 0.0985329)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Dog"]
