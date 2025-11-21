@@ -215,7 +215,7 @@ offset_right = 9.0
 offset_bottom = 138.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
-text = "Dungeon Exploration"
+text = "Dungeon Journey"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]

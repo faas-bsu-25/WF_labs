@@ -11,4 +11,5 @@ config_version=5
 [application]
 
 config/name="project3"
+run/main_scene="uid://pck388jmclit"
 config/features=PackedStringArray("4.4", "Forward Plus")
