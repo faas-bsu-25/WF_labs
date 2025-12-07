@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvtt4i4ed2wya"
-path="res://.godot/imported/flying-kick1.png-8c91dc5e05c6c09e26024600135704ce.ctex"
+uid="uid://duxdjd5fg8x8d"
+path="res://.godot/imported/flying-kick1.png-dbdd611e091097189468895f0b68696b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/player/sprites/flying-kick1.png"
-dest_files=["res://.godot/imported/flying-kick1.png-8c91dc5e05c6c09e26024600135704ce.ctex"]
+source_file="res://sprites/player/sprites/flying-kick1.png"
+dest_files=["res://.godot/imported/flying-kick1.png-dbdd611e091097189468895f0b68696b.ctex"]
 
 [params]
 

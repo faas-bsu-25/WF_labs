@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhok4t3xe81hj"
-path="res://.godot/imported/angel2.png-bbb461d13247a3ef4fc8c4f1dc1ed6e4.ctex"
+uid="uid://c0ip480snicjv"
+path="res://.godot/imported/angel2.png-c17dd4a29ec03aff586ba31a77d4aa76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/angel/sprites/idle/angel2.png"
-dest_files=["res://.godot/imported/angel2.png-bbb461d13247a3ef4fc8c4f1dc1ed6e4.ctex"]
+source_file="res://sprites/angel/sprites/idle/angel2.png"
+dest_files=["res://.godot/imported/angel2.png-c17dd4a29ec03aff586ba31a77d4aa76.ctex"]
 
 [params]
 

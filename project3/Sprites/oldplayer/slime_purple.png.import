@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uskfedbhva6x"
-path="res://.godot/imported/slime_purple.png-9a4fbf866b4b88712a2a7d34bb6653f5.ctex"
+path="res://.godot/imported/slime_purple.png-696b2e4b0d026dd3c65c1354fa2e6fdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/oldplayer/slime_purple.png"
-dest_files=["res://.godot/imported/slime_purple.png-9a4fbf866b4b88712a2a7d34bb6653f5.ctex"]
+source_file="res://sprites/oldplayer/slime_purple.png"
+dest_files=["res://.godot/imported/slime_purple.png-696b2e4b0d026dd3c65c1354fa2e6fdc.ctex"]
 
 [params]
 

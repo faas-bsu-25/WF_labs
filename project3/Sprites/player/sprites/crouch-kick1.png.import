@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cawb44blrgarn"
-path="res://.godot/imported/crouch-kick1.png-f6e3949a5672fcc0323407398cb5ff68.ctex"
+uid="uid://b5lv0hxoayfwc"
+path="res://.godot/imported/crouch-kick1.png-edf64d6d9cea9c75cd028940e8fd5177.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/player/sprites/crouch-kick1.png"
-dest_files=["res://.godot/imported/crouch-kick1.png-f6e3949a5672fcc0323407398cb5ff68.ctex"]
+source_file="res://sprites/player/sprites/crouch-kick1.png"
+dest_files=["res://.godot/imported/crouch-kick1.png-edf64d6d9cea9c75cd028940e8fd5177.ctex"]
 
 [params]
 

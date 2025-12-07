@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3k0j5w38ls3d"
-path="res://.godot/imported/kick1.png-369cf4eef574b72d3faf89193cf5497b.ctex"
+uid="uid://dimfqwa11dqt0"
+path="res://.godot/imported/kick1.png-82a99bb65b89f2ed84b0da5965e7f992.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/player/sprites/kick1.png"
-dest_files=["res://.godot/imported/kick1.png-369cf4eef574b72d3faf89193cf5497b.ctex"]
+source_file="res://sprites/player/sprites/kick1.png"
+dest_files=["res://.godot/imported/kick1.png-82a99bb65b89f2ed84b0da5965e7f992.ctex"]
 
 [params]
 

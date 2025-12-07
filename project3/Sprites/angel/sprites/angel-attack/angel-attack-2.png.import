@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2bruawgfgdgg"
-path="res://.godot/imported/angel-attack-2.png-29fd53984e7d7990f153bc563e866c26.ctex"
+uid="uid://bcvliv151xpss"
+path="res://.godot/imported/angel-attack-2.png-affedc5aa0dfcdc062a119ebe558e766.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/angel/sprites/angel-attack/angel-attack-2.png"
-dest_files=["res://.godot/imported/angel-attack-2.png-29fd53984e7d7990f153bc563e866c26.ctex"]
+source_file="res://sprites/angel/sprites/angel-attack/angel-attack-2.png"
+dest_files=["res://.godot/imported/angel-attack-2.png-affedc5aa0dfcdc062a119ebe558e766.ctex"]
 
 [params]
 
