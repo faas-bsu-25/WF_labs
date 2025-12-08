@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://mm2ed1clr3eb"]
+
+[ext_resource type="Script" uid="uid://db17jdxqa5eq8" path="res://scripts/new_enemy.gd" id="1_abjxw"]
+[ext_resource type="Texture2D" uid="uid://uskfedbhva6x" path="res://sprites/oldplayer/slime_purple.png" id="2_34mmw"]
+
+[node name="newEnemy" type="CharacterBody2D"]
+script = ExtResource("1_abjxw")
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Graphics"]
+texture = ExtResource("2_34mmw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]

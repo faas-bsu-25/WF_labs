@@ -14,6 +14,10 @@ var on_ladder = false
 var is_climbing = false
 var is_attacking = false
 
+var max_health := 100
+var current_health := 100
+
+
 func _physics_process(delta: float) -> void:
 	
 	if on_ladder:
@@ -49,8 +53,6 @@ func _physics_process(delta: float) -> void:
 		start_attack()
 		return
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -95,3 +97,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 	if body.name == "Player":
 		body.on_ladder = false
+		
+func take_damage(amount: int) -> void:
+	current_health -= amount
+	current_health = clamp(current_health, 0, max_health)
+	
