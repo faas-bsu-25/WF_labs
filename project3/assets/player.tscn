@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://v8k7ejnco5k1"]
+[gd_scene load_steps=29 format=3 uid="uid://v8k7ejnco5k1"]
 
 [ext_resource type="Script" uid="uid://hanxofwrqb77" path="res://scripts/character_body_2d.gd" id="1_m0ick"]
 [ext_resource type="Texture2D" uid="uid://cq8d0b351w2yt" path="res://sprites/player/sprites/punch1.png" id="2_1npgd"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://8mkmbob5ssip" path="res://music/jump.wav" id="22_vf2wx"]
 [ext_resource type="AudioStream" uid="uid://c72m3mut0harc" path="res://music/hurt.wav" id="23_urorh"]
 [ext_resource type="Script" uid="uid://b2jjit2jvhu8o" path="res://scripts/attack_area_2d.gd" id="24_dgkpg"]
+[ext_resource type="PackedScene" uid="uid://xkdlk00w7gk3" path="res://assets/status_panel.tscn" id="25_1npgd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmgfc"]
 height = 52.0
@@ -108,7 +109,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3fsy"]
 size = Vector2(20.5, 31)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_m0ick")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -149,6 +150,22 @@ script = ExtResource("24_dgkpg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D"]
 position = Vector2(3, 4)
 shape = SubResource("RectangleShape2D_b3fsy")
+
+[node name="StatusPanel" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("25_1npgd")]
+offset_left = -69.0
+offset_top = -22.0
+offset_right = 118.0
+offset_bottom = -2.99999
+scale = Vector2(0.781788, -1.03266)
+stats = NodePath("..")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -269.0
+offset_top = -143.0
+offset_right = -206.0
+offset_bottom = -104.0
+theme_override_font_sizes/font_size = 40
+text = "ESC"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal health_changed
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -700.0
@@ -15,7 +16,7 @@ var is_climbing = false
 var is_attacking = false
 
 var max_health := 100
-var current_health := 100
+var health := 100
 
 
 func _physics_process(delta: float) -> void:
@@ -99,6 +100,16 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		body.on_ladder = false
 		
 func take_damage(amount: int) -> void:
-	current_health -= amount
-	current_health = clamp(current_health, 0, max_health)
-	
+	health -= amount
+	health = clamp(health, 0, max_health)
+	health_changed.emit() 
+
+	if health <= 0:
+		die()
+
+func die() -> void:
+	print("Player died! Restarting...")
+
+	await get_tree().create_timer(0.5).timeout
+
+	get_tree().reload_current_scene()

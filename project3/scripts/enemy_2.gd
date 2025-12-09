@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 signal enemy_died
+signal health_changed
+
 @onready var animator: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detect_area: Area2D = $DetectArea       
 @onready var hitbox: Area2D = $Hitbox               
@@ -9,6 +11,7 @@ var health: int = 100
 var is_dead: bool = false
 var is_attacking: bool = false
 var player: Node = null
+var max_health = 100
 
 func _ready() -> void:
 	animator.play("idle") 
@@ -47,16 +50,19 @@ func _on_detect_area_body_exited(body: Node) -> void:
 		animator.play("idle")
 
 func _on_hitbox_body_entered(body: Node) -> void:
-	if body.name == "Player":
-		if body.has_method("take_damage"):
-			body.take_damage(10)
-			print("Enemy hit player!")
+	if body.is_in_group("Player"):
+		body.take_damage(20)
+		print("Enemy hit player!")
+		hitbox.monitoring = false
+		await get_tree().create_timer(0.05).timeout
+		hitbox.monitoring = true
 
 func take_damage(amount: int) -> void:
 	if is_dead:
 		return
 	health -= amount
 	print("Enemy took damage! Health =", health)
+	health_changed.emit()
 	if health <= 0:
 		die()
 

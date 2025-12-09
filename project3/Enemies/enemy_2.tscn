@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://06b7c1h3mvwk"]
+[gd_scene load_steps=26 format=3 uid="uid://06b7c1h3mvwk"]
 
 [ext_resource type="Script" uid="uid://duqwl76k46hrb" path="res://scripts/enemy_2.gd" id="1_vx777"]
 [ext_resource type="Texture2D" uid="uid://dfk4ghxbncy82" path="res://sprites/angel/sprites/idle/angel1.png" id="2_6iesk"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dprgxjj8x4vpm" path="res://sprites/fireman/enemy-death-sprites/enemy-death7.png" id="10_4lywv"]
 [ext_resource type="Texture2D" uid="uid://cneny4uum2vgn" path="res://sprites/fireman/enemy-death-sprites/enemy-death8.png" id="11_i8ppu"]
 [ext_resource type="Texture2D" uid="uid://0fvx8ap07yd7" path="res://sprites/fireman/enemy-death-sprites/enemy-death9.png" id="12_a65ag"]
+[ext_resource type="PackedScene" uid="uid://xkdlk00w7gk3" path="res://assets/status_panel.tscn" id="21_4apdd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1wql1"]
 animations = [{
@@ -101,7 +102,7 @@ radius = 16.0
 height = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86edy"]
-size = Vector2(29.25, 33)
+size = Vector2(46, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1o25g"]
 size = Vector2(148.5, 34)
@@ -123,7 +124,7 @@ shape = SubResource("CapsuleShape2D_ykshk")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(106, 30)
+position = Vector2(105, 30)
 shape = SubResource("RectangleShape2D_86edy")
 
 [node name="DetectArea" type="Area2D" parent="."]
@@ -133,3 +134,11 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
 position = Vector2(107, 31)
 shape = SubResource("RectangleShape2D_1o25g")
+
+[node name="StatusPanel" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("21_4apdd")]
+offset_left = 49.0
+offset_top = -18.0
+offset_right = 236.0
+offset_bottom = 0.999996
+scale = Vector2(0.604828, 1.45714)
+stats = NodePath("..")

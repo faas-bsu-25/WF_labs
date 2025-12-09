@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyxldcsvlt030"]
+
+[ext_resource type="Script" uid="uid://blb0trn3mu7qs" path="res://scripts/stop_ui.gd" id="1_d71ml"]
+[ext_resource type="Theme" uid="uid://d2ffxymfhwqmm" path="res://assets/Pause_theme.tres" id="2_tvea3"]
+
+[node name="StopUI" type="CanvasLayer" node_paths=PackedStringArray("pause_panel")]
+process_mode = 3
+script = ExtResource("1_d71ml")
+pause_panel = NodePath("Control/PausePanel")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 151.0
+
+[node name="PausePanel" type="Panel" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 1152.0
+offset_bottom = 650.0
+theme = ExtResource("2_tvea3")
+
+[node name="Label" type="Label" parent="Control/PausePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -225.5
+offset_right = 123.0
+offset_bottom = -115.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Paused"
+
+[node name="ResumButton" type="Button" parent="Control/PausePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -72.5
+offset_right = 125.0
+offset_bottom = -17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Reseum"
+
+[node name="QuitButton" type="Button" parent="Control/PausePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -6.5
+offset_right = 66.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[connection signal="pressed" from="Control/PausePanel/ResumButton" to="." method="unpause"]
+[connection signal="pressed" from="Control/PausePanel/QuitButton" to="." method="quit_game"]

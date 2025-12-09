@@ -4,10 +4,13 @@ extends CharacterBody2D
 @onready var detect_area: Area2D = $DetectArea       
 @onready var hitbox: Area2D = $Hitbox               
 
+signal health_changed
+
 var health: int = 50
 var is_dead: bool = false
 var is_attacking: bool = false
 var player: Node = null
+var max_health = 50
 
 func _ready() -> void:
 	animator.play("idle") 
@@ -34,6 +37,7 @@ func start_attack() -> void:
 	if player != null and not is_dead:
 		start_attack()
 	
+	
 func _on_detect_area_body_entered(body: Node) -> void:
 	if body.name == "Player":
 		player = body
@@ -46,10 +50,12 @@ func _on_detect_area_body_exited(body: Node) -> void:
 		animator.play("idle")
 
 func _on_hitbox_body_entered(body: Node) -> void:
-	if body.name == "Player":
-		if body.has_method("take_damage"):
-			body.take_damage(10)
-			print("Enemy hit player!")
+	if body.is_in_group("Player"):
+		body.take_damage(10)
+		print("Enemy hit player!")
+		hitbox.monitoring = false
+		await get_tree().create_timer(0.05).timeout
+		hitbox.monitoring = true
 
 func take_damage(amount: int) -> void:
 	if is_dead:
@@ -57,6 +63,7 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	print("Enemy took damage! Health =", health)
 	animator.play("hurted")
+	health_changed.emit()
 	if health <= 0:
 		die()
 

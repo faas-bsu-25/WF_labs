@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://qqagg8cm7rb3"]
+[gd_scene load_steps=16 format=4 uid="uid://qqagg8cm7rb3"]
 
 [ext_resource type="TileSet" uid="uid://g3uxdxt7lgdu" path="res://assets/tileset resource.tres" id="1_j73ts"]
 [ext_resource type="PackedScene" uid="uid://v8k7ejnco5k1" path="res://assets/player.tscn" id="2_rm04x"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dpp6gkke68v7x" path="res://sprites/oldplayer/platform.png" id="7_rm04x"]
 [ext_resource type="Texture2D" uid="uid://c01ru0cprf7bp" path="res://assets/light.tres" id="8_8jiud"]
 [ext_resource type="PackedScene" uid="uid://dogvbpa5uq5y6" path="res://assets/ladder.tscn" id="9_weq77"]
+[ext_resource type="PackedScene" uid="uid://dyxldcsvlt030" path="res://assets/stop_ui.tscn" id="10_5iw4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jiud"]
 size = Vector2(64, 16)
@@ -55,6 +56,8 @@ _data = {
 polygon = PackedVector2Array(-32, 1, -32, 16, 32, 16, 32, 0)
 
 [node name="Leve2world" type="Node2D"]
+
+[node name="StopUI" parent="." instance=ExtResource("10_5iw4n")]
 
 [node name="Environment" type="Node2D" parent="."]
 metadata/_edit_lock_ = true

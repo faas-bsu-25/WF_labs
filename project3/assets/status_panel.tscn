@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://xkdlk00w7gk3"]
+
+[ext_resource type="Script" uid="uid://cxv26nm1ywlrx" path="res://scripts/status_panel.gd" id="1_gav1h"]
+[ext_resource type="Texture2D" uid="uid://8efxdp4g812" path="res://sprites/Divider/divider-002.png" id="2_w3yid"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vhor"]
+atlas = ExtResource("2_w3yid")
+region = Rect2(0, 3, 187, 6)
+
+[node name="StatusPanel" type="HBoxContainer"]
+offset_top = 4.99999
+offset_right = 187.0
+offset_bottom = 24.0
+scale = Vector2(1.30758, 3.69315)
+script = ExtResource("1_gav1h")
+
+[node name="health" type="TextureProgressBar" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
+value = 1.0
+texture_progress = SubResource("AtlasTexture_6vhor")

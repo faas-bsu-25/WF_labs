@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://br5rr4n2aa2xg"]
+[gd_scene load_steps=31 format=3 uid="uid://br5rr4n2aa2xg"]
 
 [ext_resource type="Script" uid="uid://bmfocb2aio5oe" path="res://scripts/enemy.gd" id="1_uo8du"]
 [ext_resource type="Texture2D" uid="uid://8dcf7y4t7x0j" path="res://sprites/fireman/fire-sprites/fire1.png" id="2_yv4rg"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://o248pouc547c" path="res://sprites/fireman/idle-sprites/wizard-idle-3.png" id="23_unrff"]
 [ext_resource type="Texture2D" uid="uid://dp6y0kvu2yf4g" path="res://sprites/fireman/idle-sprites/wizard-idle-4.png" id="24_u7xib"]
 [ext_resource type="Texture2D" uid="uid://lihf7xlxrmrj" path="res://sprites/fireman/idle-sprites/wizard-idle-5.png" id="25_ogj38"]
+[ext_resource type="PackedScene" uid="uid://xkdlk00w7gk3" path="res://assets/status_panel.tscn" id="26_yv4rg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ykshk"]
 radius = 16.0
@@ -132,7 +133,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86edy"]
-size = Vector2(29.25, 33)
+size = Vector2(79, 33)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1o25g"]
 size = Vector2(148.5, 34)
@@ -153,10 +154,11 @@ frame = 3
 frame_progress = 0.353588
 
 [node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(-1, 24)
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(106, 30)
+position = Vector2(106, 7)
 shape = SubResource("RectangleShape2D_86edy")
 
 [node name="DetectArea" type="Area2D" parent="."]
@@ -165,3 +167,11 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
 position = Vector2(106, 30)
 shape = SubResource("RectangleShape2D_1o25g")
+
+[node name="StatusPanel" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("26_yv4rg")]
+offset_left = 61.0
+offset_top = -5.0
+offset_right = 248.0
+offset_bottom = 14.0
+scale = Vector2(0.467581, 1.17315)
+stats = NodePath("..")
